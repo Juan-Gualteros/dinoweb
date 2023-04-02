@@ -1,0 +1,18 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="name" [(ngModel)]="author.name" placeholder="Name" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nationality" [(ngModel)]="author.nationality" placeholder="Nationality" class="form-control">
+                </div>
+                <button class="btn btn-success btn-block" (click)=" updateAuthor() ">
+                    save
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+

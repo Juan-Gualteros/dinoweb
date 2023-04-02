@@ -1,0 +1,19 @@
+<div class="col-md-4" *ngFor="let author of authors" >
+    <div class="card textcenter">
+        <div class="card-header bg-dark text-white  d-flex justify-content-between text-center align-items-center">
+            {{author.name}}
+        <button class= "btn btn-danger" (click)="deleteAuthor(author.author_id)">
+            <i class="far fa-trash-alt"></i>
+        </button>
+        </div>
+        <div class="card-body">
+            <div class="card-body">
+                <p>{{author.nationality}}</p>
+                <a [routerLink]="['/authors/update', author.author_id]" class = "btn btn-info btn-block" >
+                    EDIT AUTHOR
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</div>

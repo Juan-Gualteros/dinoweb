@@ -1,0 +1,17 @@
+<div class="col-md-4" *ngFor="let book of books">
+    <div class="card textcenter">
+        <div class="card-header bg-dark text-white  d-flex justify-content-between align-items-center">
+            {{book.title}}
+            <button class= "btn btn-danger" (click)="deleteBook(book.book_id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="book.cover_url" class="card-img-top">
+        <div class="card-body">
+            <p>{{book.description}}</p>
+            <a [routerLink]="['/books/update', book.book_id]" class = "btn btn-info btn-block" >EDIT BOOK</a>
+            
+        </div>
+    </div>
+    
+</div>

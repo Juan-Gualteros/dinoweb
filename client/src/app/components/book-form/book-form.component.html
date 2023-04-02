@@ -1,0 +1,43 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="title" [(ngModel)]="Book.title" placeholder="Title" class="form-control" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="number" size="4" maxlength="4" name="year" [(ngModel)]="Book.year" placeholder="Year" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="laguage" [(ngModel)]="Book.language" placeholder="Language" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="url" name="cover_url" [(ngModel)]="Book.cover_url" placeholder="Image" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="price" [(ngModel)]="Book.price" placeholder="Price" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="copies" [(ngModel)]="Book.copies" placeholder="Copies" class="form-control">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" [(ngModel)]="Book.description" placeholder="Description" row="2" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-success btn-block" (click)="edit ? updateBook() : saveNewBook()">
+                    save
+                </button>
+                <button class="btn btn-success btn-block"> nuevo </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <img [src]="Book.cover_url == '' ? '/assets/no-image.png' : Book.cover_url"  calss ="card-img-top">
+        <h3>{{Book.book_id}}. {{Book.title == '' ? 'Book title' : Book.title}}</h3>
+        <p>{{Book.year}}</p>
+        <p>{{Book.description == '' ? 'Write your description' : Book.description}}</p>
+    </div>
+</div>
